@@ -13,7 +13,7 @@
     "iconList": {
         "music": "<svg>...</svg>"
     "exlink": {
-        "music": "https://music.meekdai.com"
+        "music": "https://music.meekdai.com",
     },
     "commentLabelColor": "#006b75",
     "yearColorList": ["#bc4c00", "#0969da", "#1f883d", "#A333D0"],

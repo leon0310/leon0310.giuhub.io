@@ -12,6 +12,7 @@
     "singlePage": ["about"],
     "iconList": {
         "music": "<svg>...</svg>"
+    };
     "exlink": {
         "music": "https://music.meekdai.com",
     },

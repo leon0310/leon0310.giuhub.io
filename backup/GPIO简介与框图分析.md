@@ -78,3 +78,6 @@ ADC外设要采集到原始的模拟信号，信号源输入必须在施密特�
 ### 2.2 端口配置高寄存器
 
 ![image614](https://github.com/user-attachments/assets/1aa8fca5-d46b-4be5-b6b6-2f0aefa360b3)
+
+**参考与致谢**
+[使用寄存器点亮LED灯](https://doc.embedfire.com/mcu/stm32/f103/hal_generalzh/latest/doc/chapter7/chapter7.html)

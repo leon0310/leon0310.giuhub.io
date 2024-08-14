@@ -29,7 +29,7 @@
 <meta property="og:url" content="https://leon0310.github.io/leon0310.giuhub.io//post/GPIO-jian-jie-yu-kuang-tu-fen-xi.html">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/Meekdai/meekdai.github.io/logo64.jpg">
 <title>GPIO简介与框图分析</title>
-
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
 
 </head>
@@ -131,18 +131,17 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 （此时信号不经过施密特触发器，因为经过施密特触发器后信号只有0、1两种状态）<br>
 ADC外设要采集到原始的模拟信号，信号源输入必须在施密特触发器之前。类似地，当GPIO引脚用于DAC作为模拟电压输出通道时，此时作为“模拟输出”功能，DAC的模拟信号输出就不经过双MOS管结构，模拟信号直接输出到引脚。</p>
 <h3>1.6. GPIO工作模式</h3>
-<pre class="notranslate"><code class="notranslate"> typedef enum
+<div class="highlight highlight-source-c"><pre class="notranslate"> <span class="pl-k">typedef</span> <span class="pl-k">enum</span>
  {
-     GPIO_Mode_AIN = 0x0,           // 模拟输入
-     GPIO_Mode_IN_FLOATING = 0x04,  // 浮空输入
-     GPIO_Mode_IPD = 0x28,          // 下拉输入
-     GPIO_Mode_IPU = 0x48,          // 上拉输入
-     GPIO_Mode_Out_OD = 0x14,       // 开漏输出
-     GPIO_Mode_Out_PP = 0x10,       // 推挽输出
-     GPIO_Mode_AF_OD = 0x1C,        // 复用开漏输出
-     GPIO_Mode_AF_PP = 0x18         // 复用推挽输出
- } GPIOMode_TypeDef;
-</code></pre>
+     <span class="pl-s1">GPIO_Mode_AIN</span> <span class="pl-c1">=</span> <span class="pl-c1">0x0</span>,           <span class="pl-c">// 模拟输入</span>
+     <span class="pl-s1">GPIO_Mode_IN_FLOATING</span> <span class="pl-c1">=</span> <span class="pl-c1">0x04</span>,  <span class="pl-c">// 浮空输入</span>
+     <span class="pl-s1">GPIO_Mode_IPD</span> <span class="pl-c1">=</span> <span class="pl-c1">0x28</span>,          <span class="pl-c">// 下拉输入</span>
+     <span class="pl-s1">GPIO_Mode_IPU</span> <span class="pl-c1">=</span> <span class="pl-c1">0x48</span>,          <span class="pl-c">// 上拉输入</span>
+     <span class="pl-s1">GPIO_Mode_Out_OD</span> <span class="pl-c1">=</span> <span class="pl-c1">0x14</span>,       <span class="pl-c">// 开漏输出</span>
+     <span class="pl-s1">GPIO_Mode_Out_PP</span> <span class="pl-c1">=</span> <span class="pl-c1">0x10</span>,       <span class="pl-c">// 推挽输出</span>
+     <span class="pl-s1">GPIO_Mode_AF_OD</span> <span class="pl-c1">=</span> <span class="pl-c1">0x1C</span>,        <span class="pl-c">// 复用开漏输出</span>
+     <span class="pl-s1">GPIO_Mode_AF_PP</span> <span class="pl-c1">=</span> <span class="pl-c1">0x18</span>         <span class="pl-c">// 复用推挽输出</span>
+ } <span class="pl-smi">GPIOMode_TypeDef</span>;</pre></div>
 <p>在固件库中，GPIO总共有8种细分的工作模式，稍加整理可以大致归类为以下三类：</p>
 <p>1.6.1  输入模式(模拟/浮空/上拉/下拉) 【只允许输入，输出被禁止】</p>
 <p>在输入模式时，施密特触发器打开，输出被禁止，可通过输入数据寄存器GPIOx_IDR读取I/O状态。其中输入模式，可设置为上拉、下拉、浮空和模拟输入四种。上拉和下拉输入很好理解，默认的电平由上拉或者下拉决定。浮空输入的电平是不确定的，完全由外部的输入决定，一般接按键的时候用的是这个模式。模拟输入则用于ADC采集。</p>

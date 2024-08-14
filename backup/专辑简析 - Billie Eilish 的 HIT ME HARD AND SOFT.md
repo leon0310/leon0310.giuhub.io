@@ -16,7 +16,9 @@ Gmeek-html<iframe style='border-radius:12px' src='https://open.spotify.com/embed
 ```
 虽说‘skinny’与‘lunch’之间碧梨选择了一个相对平滑的过渡，但这两首歌没有任何的联系。碧梨一转skinny中传达的忧郁情绪，表达直白，她只是用自己的方式透露了自己的双性恋取向，然而在大多数人看来是一种麻木不仁的”酷儿诱饵“。用简单平快的音乐谈论直白的”性明示“，加上y2k风格的 songwriting 和 MV，让这首歌在流媒体时代中算的上是一种”酷儿时尚单品“。
 > lunch MV 片段
-<img src="https://github.com/user-attachments/assets/431d8f1c-a508-479a-b69c-e0d131e13774" width="50%" />
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/431d8f1c-a508-479a-b69c-e0d131e13774" width="50%" />
+</div>
 
 ### 2.3 chihiro  9.0 ⭐
 ```
@@ -24,9 +26,9 @@ Gmeek-html<iframe style='border-radius:12px' src='https://open.spotify.com/embed
 ```
 受千与千寻主角”千寻“启发的’chihiro’，碧梨在这首歌中讲述女孩如何深入理解生活，勇敢面对内心恐惧的旅程，house电子舞曲节拍搭建出犹如电影中通往异世界的隧道，如梦似幻，像是漂浮著又像是不断下沉，既混乱又享受，碧梨精准传递她所谓的双向矛盾概念”HARD AND SOFT“；虚无缥缈的人声无疑为这首歌的氛围增色，beatswitch虽在以往的专辑中被多次使用，但却屡试不爽，在这首歌中得到了很好的体现。
 > chihiro MV 片段
-<img src="https://github.com/user-attachments/assets/7e7dc970-d165-4698-a713-fdeffdd40f1b" width="50%" />
-
-
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/7e7dc970-d165-4698-a713-fdeffdd40f1b" width="50%" />
+</div>
 ### 2.4 birds of the feather 9.6 ⭐
 
 ```

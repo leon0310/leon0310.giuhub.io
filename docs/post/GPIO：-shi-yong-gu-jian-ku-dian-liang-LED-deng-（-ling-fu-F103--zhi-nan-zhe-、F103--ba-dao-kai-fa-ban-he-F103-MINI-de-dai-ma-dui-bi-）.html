@@ -17,7 +17,7 @@
 <meta property="og:url" content="https://leon0310.github.io/leon0310.giuhub.io//post/GPIO%EF%BC%9A-shi-yong-gu-jian-ku-dian-liang-LED-deng-%EF%BC%88-ling-fu-F103--zhi-nan-zhe-%E3%80%81F103--ba-dao-kai-fa-ban-he-F103-MINI-de-dai-ma-dui-bi-%EF%BC%89.html">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/Meekdai/meekdai.github.io/logo64.jpg">
 <title>GPIO：使用固件库点亮LED灯（另附F103-指南者、F103-霸道开发板和F103-MINI的代码对比）</title>
-
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
 
 </head>
@@ -104,38 +104,36 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <blockquote>
 <p>代码清单1：F103-指南者和 F103-霸道开发板 LED控制引脚相关的宏</p>
 </blockquote>
-<pre class="notranslate"><code class="notranslate">//引脚定义
- /*******************************************************/
- //R 红色灯
- #define LED1_PIN                  GPIO_PIN_5
- #define LED1_GPIO_PORT            GPIOB
- #define LED1_GPIO_CLK_ENABLE()   __HAL_RCC_GPIOB_CLK_ENABLE()
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-c">//引脚定义</span>
+ <span class="pl-c">/*******************************************************/</span>
+ <span class="pl-c">//R 红色灯</span>
+ <span class="pl-k">#define</span> <span class="pl-c1">LED1_PIN</span>                  GPIO_PIN_5
+ <span class="pl-k">#define</span> <span class="pl-c1">LED1_GPIO_PORT</span>            GPIOB
+ <span class="pl-k">#define</span> <span class="pl-en">LED1_GPIO_CLK_ENABLE</span>()   __HAL_RCC_GPIOB_CLK_ENABLE()
 
- //G 绿色灯
- #define LED2_PIN                  GPIO_PIN_0
- #define LED2_GPIO_PORT            GPIOB
- #define LED2_GPIO_CLK_ENABLE()   __HAL_RCC_GPIOB_CLK_ENABLE()
+ <span class="pl-c">//G 绿色灯</span>
+ <span class="pl-k">#define</span> <span class="pl-c1">LED2_PIN</span>                  GPIO_PIN_0
+ <span class="pl-k">#define</span> <span class="pl-c1">LED2_GPIO_PORT</span>            GPIOB
+ <span class="pl-k">#define</span> <span class="pl-en">LED2_GPIO_CLK_ENABLE</span>()   __HAL_RCC_GPIOB_CLK_ENABLE()
 
- //B 蓝色灯
- #define LED3_PIN                  GPIO_PIN_1
- #define LED3_GPIO_PORT            GPIOB
- #define LED3_GPIO_CLK_ENABLE()    __HAL_RCC_GPIOB_CLK_ENABLE()
-</code></pre>
+ <span class="pl-c">//B 蓝色灯</span>
+ <span class="pl-k">#define</span> <span class="pl-c1">LED3_PIN</span>                  GPIO_PIN_1
+ <span class="pl-k">#define</span> <span class="pl-c1">LED3_GPIO_PORT</span>            GPIOB
+ <span class="pl-k">#define</span> <span class="pl-en">LED3_GPIO_CLK_ENABLE</span>()    __HAL_RCC_GPIOB_CLK_ENABLE()</pre></div>
 <blockquote>
 <p>代码清单2：F103-MINI开发板LED控制引脚相关的宏</p>
 </blockquote>
-<pre class="notranslate"><code class="notranslate">//引脚定义
-/*******************************************************/
-//R 红色灯
-#define LED1_PIN                  GPIO_PIN_2
-#define LED1_GPIO_PORT            GPIOC
-#define LED1_GPIO_CLK_ENABLE()   __HAL_RCC_GPIOC_CLK_ENABLE()
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-c">//引脚定义</span>
+<span class="pl-c">/*******************************************************/</span>
+<span class="pl-c">//R 红色灯</span>
+<span class="pl-k">#define</span> <span class="pl-c1">LED1_PIN</span>                  GPIO_PIN_2
+<span class="pl-k">#define</span> <span class="pl-c1">LED1_GPIO_PORT</span>            GPIOC
+<span class="pl-k">#define</span> <span class="pl-en">LED1_GPIO_CLK_ENABLE</span>()   __HAL_RCC_GPIOC_CLK_ENABLE()
 
-//G 绿色灯
-#define LED2_PIN                  GPIO_PIN_3
-#define LED2_GPIO_PORT            GPIOC
-#define LED2_GPIO_CLK_ENABLE()   __HAL_RCC_GPIOC_CLK_ENABLE()
-</code></pre>
+<span class="pl-c">//G 绿色灯</span>
+<span class="pl-k">#define</span> <span class="pl-c1">LED2_PIN</span>                  GPIO_PIN_3
+<span class="pl-k">#define</span> <span class="pl-c1">LED2_GPIO_PORT</span>            GPIOC
+<span class="pl-k">#define</span> <span class="pl-en">LED2_GPIO_CLK_ENABLE</span>()   __HAL_RCC_GPIOC_CLK_ENABLE()</pre></div>
 <p>以上代码分别把控制LED灯的GPIO端口、GPIO引脚号以及GPIO端口时钟封装起来了。在实际控制的时候我们就直接用这些宏，以达到应用代码跟硬件无关的效果。</p>
 <p>其中的GPIO时钟宏“__GPIOF_CLK_ENABLE()”是STM32HAL库定义的GPIO端口时钟相关的宏，它的作用与“GPIO_PIN_x”这类宏类似，是用于指示寄存器位的，方便库函数使用。它们指示GPIOF时钟，下面初始化GPIO时钟的时候可以看到它的用法。</p>
 <h4>2.1.2 控制LED灯亮灭状态的宏定义</h4>
@@ -143,176 +141,171 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <blockquote>
 <p>代码清单3：F103-指南者和F103-霸道开发板控制LED亮灭的宏</p>
 </blockquote>
-<pre class="notranslate"><code class="notranslate">/** 控制LED灯亮灭的宏，
- * LED低电平亮，设置ON=0，OFF=1
- * 若LED高电平亮，把宏设置成ON=1 ，OFF=0 即可
- */
- #define ON  GPIO_PIN_RESET
- #define OFF GPIO_PIN_SET
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-c">/** 控制LED灯亮灭的宏，</span>
+<span class="pl-c"> * LED低电平亮，设置ON=0，OFF=1</span>
+<span class="pl-c"> * 若LED高电平亮，把宏设置成ON=1 ，OFF=0 即可</span>
+<span class="pl-c"> */</span>
+ <span class="pl-k">#define</span> <span class="pl-c1">ON</span>  GPIO_PIN_RESET
+ <span class="pl-k">#define</span> <span class="pl-c1">OFF</span> GPIO_PIN_SET
 
- /* 带参宏，可以像内联函数一样使用 */
- #define LED1(a) HAL_GPIO_WritePin(LED1_GPIO_PORT,LED1_PIN,a)
- #define LED2(a) HAL_GPIO_WritePin(LED2_GPIO_PORT,LED2_PIN,a)
- #define LED3(a) HAL_GPIO_WritePin(LED2_GPIO_PORT,LED3_PIN,a)
+ <span class="pl-c">/* 带参宏，可以像内联函数一样使用 */</span>
+ <span class="pl-k">#define</span> <span class="pl-en">LED1</span>(<span class="pl-s1">a</span>) HAL_GPIO_WritePin(LED1_GPIO_PORT,LED1_PIN,a)
+ <span class="pl-k">#define</span> <span class="pl-en">LED2</span>(<span class="pl-s1">a</span>) HAL_GPIO_WritePin(LED2_GPIO_PORT,LED2_PIN,a)
+ <span class="pl-k">#define</span> <span class="pl-en">LED3</span>(<span class="pl-s1">a</span>) HAL_GPIO_WritePin(LED2_GPIO_PORT,LED3_PIN,a)
 
- /* 直接操作寄存器的方法控制IO */
- #define digitalHi(p,i)      {p-&gt;BSRR=i;}        //设置为高电平
- #define digitalLo(p,i)      {p-&gt;BSRR=(uint32_t)i &lt;&lt; 16;}
-                 //输出低电平
- #define digitalToggle(p,i)    {p-&gt;ODR ^=i;}     //输出反转状态
+ <span class="pl-c">/* 直接操作寄存器的方法控制IO */</span>
+ <span class="pl-k">#define</span> <span class="pl-en">digitalHi</span>(<span class="pl-s1">p</span>,<span class="pl-s1">i</span>)      {p-&gt;BSRR=i;}        //设置为高电平
+ <span class="pl-k">#define</span> <span class="pl-en">digitalLo</span>(<span class="pl-s1">p</span>,<span class="pl-s1">i</span>)      {p-&gt;BSRR=(uint32_t)i &lt;&lt; 16;}
+                 <span class="pl-c">//输出低电平</span>
+ <span class="pl-k">#define</span> <span class="pl-en">digitalToggle</span>(<span class="pl-s1">p</span>,<span class="pl-s1">i</span>)    {p-&gt;ODR ^=i;}     //输出反转状态
 
- /* 定义控制IO的宏 */
- #define LED1_TOGGLE   digitalToggle(LED1_GPIO_PORT,LED1_PIN)
- #define LED1_OFF    digitalHi(LED1_GPIO_PORT,LED1_PIN)
- #define LED1_ON     digitalLo(LED1_GPIO_PORT,LED1_PIN)
+ <span class="pl-c">/* 定义控制IO的宏 */</span>
+ <span class="pl-k">#define</span> <span class="pl-c1">LED1_TOGGLE</span>   digitalToggle(LED1_GPIO_PORT,LED1_PIN)
+ <span class="pl-k">#define</span> <span class="pl-c1">LED1_OFF</span>    digitalHi(LED1_GPIO_PORT,LED1_PIN)
+ <span class="pl-k">#define</span> <span class="pl-c1">LED1_ON</span>     digitalLo(LED1_GPIO_PORT,LED1_PIN)
 
- #define LED2_TOGGLE   digitalToggle(LED2_GPIO_PORT,LED2_PIN)
- #define LED2_OFF    digitalHi(LED2_GPIO_PORT,LED2_PIN)
- #define LED2_ON     digitalLo(LED2_GPIO_PORT,LED2_PIN)
+ <span class="pl-k">#define</span> <span class="pl-c1">LED2_TOGGLE</span>   digitalToggle(LED2_GPIO_PORT,LED2_PIN)
+ <span class="pl-k">#define</span> <span class="pl-c1">LED2_OFF</span>    digitalHi(LED2_GPIO_PORT,LED2_PIN)
+ <span class="pl-k">#define</span> <span class="pl-c1">LED2_ON</span>     digitalLo(LED2_GPIO_PORT,LED2_PIN)
 
- #define LED3_TOGGLE   digitalToggle(LED3_GPIO_PORT,LED3_PIN)
- #define LED3_OFF    digitalHi(LED3_GPIO_PORT,LED3_PIN)
- #define LED3_ON     digitalLo(LED3_GPIO_PORT,LED3_PIN)
+ <span class="pl-k">#define</span> <span class="pl-c1">LED3_TOGGLE</span>   digitalToggle(LED3_GPIO_PORT,LED3_PIN)
+ <span class="pl-k">#define</span> <span class="pl-c1">LED3_OFF</span>    digitalHi(LED3_GPIO_PORT,LED3_PIN)
+ <span class="pl-k">#define</span> <span class="pl-c1">LED3_ON</span>     digitalLo(LED3_GPIO_PORT,LED3_PIN)
 
- /* 基本混色，后面高级用法使用PWM可混出全彩颜色,且效果更好 */
+ <span class="pl-c">/* 基本混色，后面高级用法使用PWM可混出全彩颜色,且效果更好 */</span>
 
- //红
- #define LED_RED  \
+ <span class="pl-c">//红</span>
+ <span class="pl-k">#define</span> <span class="pl-c1">LED_RED</span>  \
          LED1_ON;\
          LED2_OFF\
          LED3_OFF
- //绿
- #define LED_GREEN   \
+ <span class="pl-c">//绿</span>
+ <span class="pl-k">#define</span> <span class="pl-c1">LED_GREEN</span>   \
          LED1_OFF;\
          LED2_ON\
          LED3_OFF
- //蓝
- #define LED_BLUE  \
+ <span class="pl-c">//蓝</span>
+ <span class="pl-k">#define</span> <span class="pl-c1">LED_BLUE</span>  \
          LED1_OFF;\
          LED2_OFF\
          LED3_ON
- //黄(红+绿)
- #define LED_YELLOW  \
+ <span class="pl-c">//黄(红+绿)</span>
+ <span class="pl-k">#define</span> <span class="pl-c1">LED_YELLOW</span>  \
          LED1_ON;\
          LED2_ON\
          LED3_OFF
- //紫(红+蓝)
- #define LED_PURPLE  \
+ <span class="pl-c">//紫(红+蓝)</span>
+ <span class="pl-k">#define</span> <span class="pl-c1">LED_PURPLE</span>  \
          LED1_ON;\
          LED2_OFF\
          LED3_ON
- //青(绿+蓝)
- #define LED_CYAN \
+ <span class="pl-c">//青(绿+蓝)</span>
+ <span class="pl-k">#define</span> <span class="pl-c1">LED_CYAN</span> \
          LED1_OFF;\
          LED2_ON\
          LED3_ON
- //白(红+绿+蓝)
- #define LED_WHITE \
+ <span class="pl-c">//白(红+绿+蓝)</span>
+ <span class="pl-k">#define</span> <span class="pl-c1">LED_WHITE</span> \
          LED1_ON;\
          LED2_ON\
          LED3_ON
- //黑(全部关闭)
- #define LED_RGBOFF  \
+ <span class="pl-c">//黑(全部关闭)</span>
+ <span class="pl-k">#define</span> <span class="pl-c1">LED_RGBOFF</span>  \
          LED1_OFF;\
          LED2_OFF\
-         LED3_OFF
-</code></pre>
+         LED3_OFF</pre></div>
 <blockquote>
 <p>代码清单4：F103-MINI开发板控制LED亮灭的宏</p>
 </blockquote>
-<pre class="notranslate"><code class="notranslate">/** 控制LED灯亮灭的宏，
-* LED低电平亮，设置ON=0，OFF=1
-* 若LED高电平亮，把宏设置成ON=1 ，OFF=0 即可
-*/
-#define ON  GPIO_PIN_RESET
-#define OFF GPIO_PIN_SET
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-c">/** 控制LED灯亮灭的宏，</span>
+<span class="pl-c">* LED低电平亮，设置ON=0，OFF=1</span>
+<span class="pl-c">* 若LED高电平亮，把宏设置成ON=1 ，OFF=0 即可</span>
+<span class="pl-c">*/</span>
+<span class="pl-k">#define</span> <span class="pl-c1">ON</span>  GPIO_PIN_RESET
+<span class="pl-k">#define</span> <span class="pl-c1">OFF</span> GPIO_PIN_SET
 
-/* 带参宏，可以像内联函数一样使用 */
-#define LED1(a) HAL_GPIO_WritePin(LED1_GPIO_PORT,LED1_PIN,a)
-#define LED2(a) HAL_GPIO_WritePin(LED2_GPIO_PORT,LED2_PIN,a)
+<span class="pl-c">/* 带参宏，可以像内联函数一样使用 */</span>
+<span class="pl-k">#define</span> <span class="pl-en">LED1</span>(<span class="pl-s1">a</span>) HAL_GPIO_WritePin(LED1_GPIO_PORT,LED1_PIN,a)
+<span class="pl-k">#define</span> <span class="pl-en">LED2</span>(<span class="pl-s1">a</span>) HAL_GPIO_WritePin(LED2_GPIO_PORT,LED2_PIN,a)
 
 
-/* 直接操作寄存器的方法控制IO */
-#define digitalHi(p,i)      {p-&gt;BSRR=i;}        //设置为高电平
-#define digitalLo(p,i)      {p-&gt;BSRR=(uint32_t)i &lt;&lt; 16;}        //输出低电平
-#define digitalToggle(p,i)  {p-&gt;ODR ^=i;}     //输出反转状态
+<span class="pl-c">/* 直接操作寄存器的方法控制IO */</span>
+<span class="pl-k">#define</span> <span class="pl-en">digitalHi</span>(<span class="pl-s1">p</span>,<span class="pl-s1">i</span>)      {p-&gt;BSRR=i;}        //设置为高电平
+<span class="pl-k">#define</span> <span class="pl-en">digitalLo</span>(<span class="pl-s1">p</span>,<span class="pl-s1">i</span>)      {p-&gt;BSRR=(uint32_t)i &lt;&lt; 16;}        //输出低电平
+<span class="pl-k">#define</span> <span class="pl-en">digitalToggle</span>(<span class="pl-s1">p</span>,<span class="pl-s1">i</span>)  {p-&gt;ODR ^=i;}     //输出反转状态
 
-/* 定义控制IO的宏 */
-#define LED1_TOGGLE   digitalToggle(LED1_GPIO_PORT,LED1_PIN)
-#define LED1_OFF      digitalHi(LED1_GPIO_PORT,LED1_PIN)
-#define LED1_ON       digitalLo(LED1_GPIO_PORT,LED1_PIN)
+<span class="pl-c">/* 定义控制IO的宏 */</span>
+<span class="pl-k">#define</span> <span class="pl-c1">LED1_TOGGLE</span>   digitalToggle(LED1_GPIO_PORT,LED1_PIN)
+<span class="pl-k">#define</span> <span class="pl-c1">LED1_OFF</span>      digitalHi(LED1_GPIO_PORT,LED1_PIN)
+<span class="pl-k">#define</span> <span class="pl-c1">LED1_ON</span>       digitalLo(LED1_GPIO_PORT,LED1_PIN)
 
-#define LED2_TOGGLE   digitalToggle(LED2_GPIO_PORT,LED2_PIN)
-#define LED2_OFF      digitalHi(LED2_GPIO_PORT,LED2_PIN)
-#define LED2_ON       digitalLo(LED2_GPIO_PORT,LED2_PIN)
-</code></pre>
+<span class="pl-k">#define</span> <span class="pl-c1">LED2_TOGGLE</span>   digitalToggle(LED2_GPIO_PORT,LED2_PIN)
+<span class="pl-k">#define</span> <span class="pl-c1">LED2_OFF</span>      digitalHi(LED2_GPIO_PORT,LED2_PIN)
+<span class="pl-k">#define</span> <span class="pl-c1">LED2_ON</span>       digitalLo(LED2_GPIO_PORT,LED2_PIN)</pre></div>
 <p>这部分宏控制LED亮灭的操作是直接向BSRR寄存器写入控制指令来实现的，对BSRR低16位写1输出高电平，对BSRR高16位写1输出低电平，对ODR寄存器某位进行异或操作可反转位的状态。</p>
 <p>对于F103-指南者和F103-霸道开发板上的RGB彩灯可以实现混色，如最后一段代码我们控制红灯和绿灯亮而蓝灯灭，可混出黄色效果。</p>
 <p>代码中的“”是C语言中的续行符语法，表示续行符的下一行与续行符所在的代码是同一行。代码中因为宏定义关键字“#define”只是对当前行有效，所以我们使用续行符“\”来连接起来，以下的代码是等效的：</p>
-<pre class="notranslate"><code class="notranslate">#define LED_YELLOW LED1_ON; LED2_ON; LED3_OFF
-</code></pre>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">#define</span> <span class="pl-c1">LED_YELLOW</span> LED1_ON; LED2_ON; LED3_OFF</pre></div>
 <p>应用续行符的时候要注意，在“\”后面不能有任何字符(包括注释、空格)，只能直接回车。</p>
 <h4>2.1.3 LED GPIO初始化函数</h4>
 <p>利用上面的宏，编写LED灯的初始化函数，见以下代码清单：</p>
 <blockquote>
 <p>代码清单5 F103-指南者和F103-霸道开发板的LED GPIO初始化函数</p>
 </blockquote>
-<pre class="notranslate"><code class="notranslate">void LED_GPIO_Config(void)
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-smi">void</span> <span class="pl-en">LED_GPIO_Config</span>(<span class="pl-smi">void</span>)
  {
-     /*定义一个GPIO_InitTypeDef类型的结构体*/
-     GPIO_InitTypeDef  GPIO_InitStruct;
-     /*开启LED相关的GPIO外设时钟*/
-     LED1_GPIO_CLK_ENABLE();
-     LED2_GPIO_CLK_ENABLE();
-     LED3_GPIO_CLK_ENABLE();
-     /*选择要控制的GPIO引脚*/
-     GPIO_InitStruct.Pin = LED1_PIN;
-     /*设置引脚的输出类型为推挽输出*/
-     GPIO_InitStruct.Mode  = GPIO_MODE_OUTPUT_PP;
-     /*设置引脚为上拉模式*/
-     GPIO_InitStruct.Pull  = GPIO_PULLUP;
-     /*设置引脚速率为高速 */
-     GPIO_InitStruct.Speed = GPIO_SPEED_HIGH;
-     /*调用库函数，使用上面配置的GPIO_InitStructure初始化GPIO*/
-     HAL_GPIO_Init(LED1_GPIO_PORT, &amp;GPIO_InitStruct);
-     /*选择要控制的GPIO引脚*/
-     GPIO_InitStruct.Pin = LED2_PIN;
-     HAL_GPIO_Init(LED2_GPIO_PORT, &amp;GPIO_InitStruct);
-     /*选择要控制的GPIO引脚*/
-     GPIO_InitStruct.Pin = LED3_PIN;
-     HAL_GPIO_Init(LED3_GPIO_PORT, &amp;GPIO_InitStruct);
-     /*关闭RGB灯*/
-     LED_RGBOFF;
- }
-</code></pre>
+     <span class="pl-c">/*定义一个GPIO_InitTypeDef类型的结构体*/</span>
+     <span class="pl-smi">GPIO_InitTypeDef</span>  <span class="pl-s1">GPIO_InitStruct</span>;
+     <span class="pl-c">/*开启LED相关的GPIO外设时钟*/</span>
+     <span class="pl-en">LED1_GPIO_CLK_ENABLE</span>();
+     <span class="pl-en">LED2_GPIO_CLK_ENABLE</span>();
+     <span class="pl-en">LED3_GPIO_CLK_ENABLE</span>();
+     <span class="pl-c">/*选择要控制的GPIO引脚*/</span>
+     <span class="pl-s1">GPIO_InitStruct</span>.<span class="pl-c1">Pin</span> <span class="pl-c1">=</span> <span class="pl-c1">LED1_PIN</span>;
+     <span class="pl-c">/*设置引脚的输出类型为推挽输出*/</span>
+     <span class="pl-s1">GPIO_InitStruct</span>.<span class="pl-c1">Mode</span>  <span class="pl-c1">=</span> <span class="pl-c1">GPIO_MODE_OUTPUT_PP</span>;
+     <span class="pl-c">/*设置引脚为上拉模式*/</span>
+     <span class="pl-s1">GPIO_InitStruct</span>.<span class="pl-c1">Pull</span>  <span class="pl-c1">=</span> <span class="pl-c1">GPIO_PULLUP</span>;
+     <span class="pl-c">/*设置引脚速率为高速 */</span>
+     <span class="pl-s1">GPIO_InitStruct</span>.<span class="pl-c1">Speed</span> <span class="pl-c1">=</span> <span class="pl-c1">GPIO_SPEED_HIGH</span>;
+     <span class="pl-c">/*调用库函数，使用上面配置的GPIO_InitStructure初始化GPIO*/</span>
+     <span class="pl-en">HAL_GPIO_Init</span>(<span class="pl-c1">LED1_GPIO_PORT</span>, <span class="pl-c1">&amp;</span><span class="pl-s1">GPIO_InitStruct</span>);
+     <span class="pl-c">/*选择要控制的GPIO引脚*/</span>
+     <span class="pl-s1">GPIO_InitStruct</span>.<span class="pl-c1">Pin</span> <span class="pl-c1">=</span> <span class="pl-c1">LED2_PIN</span>;
+     <span class="pl-en">HAL_GPIO_Init</span>(<span class="pl-c1">LED2_GPIO_PORT</span>, <span class="pl-c1">&amp;</span><span class="pl-s1">GPIO_InitStruct</span>);
+     <span class="pl-c">/*选择要控制的GPIO引脚*/</span>
+     <span class="pl-s1">GPIO_InitStruct</span>.<span class="pl-c1">Pin</span> <span class="pl-c1">=</span> <span class="pl-c1">LED3_PIN</span>;
+     <span class="pl-en">HAL_GPIO_Init</span>(<span class="pl-c1">LED3_GPIO_PORT</span>, <span class="pl-c1">&amp;</span><span class="pl-s1">GPIO_InitStruct</span>);
+     <span class="pl-c">/*关闭RGB灯*/</span>
+     <span class="pl-c1">LED_RGBOFF</span>;
+ }</pre></div>
 <blockquote>
 <p>代码清单6：F103-MINI开发板的LED GPIO初始化函数</p>
 </blockquote>
-<pre class="notranslate"><code class="notranslate">void LED_GPIO_Config(void)
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-smi">void</span> <span class="pl-en">LED_GPIO_Config</span>(<span class="pl-smi">void</span>)
 {
-    /*定义一个GPIO_InitTypeDef类型的结构体*/
-    GPIO_InitTypeDef  GPIO_InitStruct;
-    /*开启LED相关的GPIO外设时钟*/
-    LED1_GPIO_CLK_ENABLE();
-    LED2_GPIO_CLK_ENABLE();
+    <span class="pl-c">/*定义一个GPIO_InitTypeDef类型的结构体*/</span>
+    <span class="pl-smi">GPIO_InitTypeDef</span>  <span class="pl-s1">GPIO_InitStruct</span>;
+    <span class="pl-c">/*开启LED相关的GPIO外设时钟*/</span>
+    <span class="pl-en">LED1_GPIO_CLK_ENABLE</span>();
+    <span class="pl-en">LED2_GPIO_CLK_ENABLE</span>();
 
-    /*选择要控制的GPIO引脚*/
-    GPIO_InitStruct.Pin = LED1_PIN;
-    /*设置引脚的输出类型为推挽输出*/
-    GPIO_InitStruct.Mode  = GPIO_MODE_OUTPUT_PP;
-    /*设置引脚为上拉模式*/
-    GPIO_InitStruct.Pull  = GPIO_PULLUP;
-    /*设置引脚速率为高速 */
-    GPIO_InitStruct.Speed = GPIO_SPEED_HIGH;
-    /*调用库函数，使用上面配置的GPIO_InitStructure初始化GPIO*/
-    HAL_GPIO_Init(LED1_GPIO_PORT, &amp;GPIO_InitStruct);
-    /*选择要控制的GPIO引脚*/
-    GPIO_InitStruct.Pin = LED2_PIN;
-    HAL_GPIO_Init(LED2_GPIO_PORT, &amp;GPIO_InitStruct);
-    /*关闭RGB灯*/
-    LED_RGBOFF;
-}
-</code></pre>
+    <span class="pl-c">/*选择要控制的GPIO引脚*/</span>
+    <span class="pl-s1">GPIO_InitStruct</span>.<span class="pl-c1">Pin</span> <span class="pl-c1">=</span> <span class="pl-c1">LED1_PIN</span>;
+    <span class="pl-c">/*设置引脚的输出类型为推挽输出*/</span>
+    <span class="pl-s1">GPIO_InitStruct</span>.<span class="pl-c1">Mode</span>  <span class="pl-c1">=</span> <span class="pl-c1">GPIO_MODE_OUTPUT_PP</span>;
+    <span class="pl-c">/*设置引脚为上拉模式*/</span>
+    <span class="pl-s1">GPIO_InitStruct</span>.<span class="pl-c1">Pull</span>  <span class="pl-c1">=</span> <span class="pl-c1">GPIO_PULLUP</span>;
+    <span class="pl-c">/*设置引脚速率为高速 */</span>
+    <span class="pl-s1">GPIO_InitStruct</span>.<span class="pl-c1">Speed</span> <span class="pl-c1">=</span> <span class="pl-c1">GPIO_SPEED_HIGH</span>;
+    <span class="pl-c">/*调用库函数，使用上面配置的GPIO_InitStructure初始化GPIO*/</span>
+    <span class="pl-en">HAL_GPIO_Init</span>(<span class="pl-c1">LED1_GPIO_PORT</span>, <span class="pl-c1">&amp;</span><span class="pl-s1">GPIO_InitStruct</span>);
+    <span class="pl-c">/*选择要控制的GPIO引脚*/</span>
+    <span class="pl-s1">GPIO_InitStruct</span>.<span class="pl-c1">Pin</span> <span class="pl-c1">=</span> <span class="pl-c1">LED2_PIN</span>;
+    <span class="pl-en">HAL_GPIO_Init</span>(<span class="pl-c1">LED2_GPIO_PORT</span>, <span class="pl-c1">&amp;</span><span class="pl-s1">GPIO_InitStruct</span>);
+    <span class="pl-c">/*关闭RGB灯*/</span>
+    <span class="pl-c1">LED_RGBOFF</span>;
+}</pre></div>
 <p>整个函数与“构建库函数雏形”章节中的类似，主要区别是硬件相关的部分使用宏来代替， 初始化GPIO端口时钟时也采用了STM32库函数，函数执行流程如下：</p>
 <p>(1)使用GPIO_InitTypeDef定义GPIO初始化结构体变量，以便下面用于存储GPIO配置。</p>
 <p>(2) 调用宏定义函数LED1_GPIO_CLK_ENABLE()来使能LED灯的GPIO端口时钟，该函数在HAL库里边将操作寄存器部分封装起来，直接调用宏即可。</p>
@@ -325,80 +318,78 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <blockquote>
 <p>代码清单7: F103-指南者和F103-霸道开发板控制LED灯 ，main文件</p>
 </blockquote>
-<pre class="notranslate"><code class="notranslate">int main(void)
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-smi">int</span> <span class="pl-en">main</span>(<span class="pl-smi">void</span>)
  {
-     /* 系统时钟初始化成72 MHz */
-     SystemClock_Config();
+     <span class="pl-c">/* 系统时钟初始化成72 MHz */</span>
+     <span class="pl-en">SystemClock_Config</span>();
 
-     /* LED 端口初始化 */
-     LED_GPIO_Config();
+     <span class="pl-c">/* LED 端口初始化 */</span>
+     <span class="pl-en">LED_GPIO_Config</span>();
 
-     /* 控制LED灯 */
-     while (1) {
-         LED1( ON );      // 亮
-         HAL_Delay(1000);
-         LED1( OFF );      // 灭
-         HAL_Delay(1000);
+     <span class="pl-c">/* 控制LED灯 */</span>
+     <span class="pl-k">while</span> (<span class="pl-c1">1</span>) {
+         <span class="pl-en">LED1</span>( <span class="pl-c1">ON</span> );      <span class="pl-c">// 亮</span>
+         <span class="pl-en">HAL_Delay</span>(<span class="pl-c1">1000</span>);
+         <span class="pl-en">LED1</span>( <span class="pl-c1">OFF</span> );      <span class="pl-c">// 灭</span>
+         <span class="pl-en">HAL_Delay</span>(<span class="pl-c1">1000</span>);
 
-         LED2( ON );     // 亮
-         HAL_Delay(1000);
-         LED2( OFF );      // 灭
+         <span class="pl-en">LED2</span>( <span class="pl-c1">ON</span> );     <span class="pl-c">// 亮</span>
+         <span class="pl-en">HAL_Delay</span>(<span class="pl-c1">1000</span>);
+         <span class="pl-en">LED2</span>( <span class="pl-c1">OFF</span> );      <span class="pl-c">// 灭</span>
 
-         LED3( ON );      // 亮
-         HAL_Delay(1000);
-         LED3( OFF );      // 灭
+         <span class="pl-en">LED3</span>( <span class="pl-c1">ON</span> );      <span class="pl-c">// 亮</span>
+         <span class="pl-en">HAL_Delay</span>(<span class="pl-c1">1000</span>);
+         <span class="pl-en">LED3</span>( <span class="pl-c1">OFF</span> );      <span class="pl-c">// 灭</span>
 
-         /*轮流显示 红绿蓝黄紫青白 颜色*/
-         LED_RED;
-         HAL_Delay(1000);
+         <span class="pl-c">/*轮流显示 红绿蓝黄紫青白 颜色*/</span>
+         <span class="pl-c1">LED_RED</span>;
+         <span class="pl-en">HAL_Delay</span>(<span class="pl-c1">1000</span>);
 
-         LED_GREEN;
-         HAL_Delay(1000);
+         <span class="pl-c1">LED_GREEN</span>;
+         <span class="pl-en">HAL_Delay</span>(<span class="pl-c1">1000</span>);
 
-         LED_BLUE;
-         HAL_Delay(1000);
+         <span class="pl-c1">LED_BLUE</span>;
+         <span class="pl-en">HAL_Delay</span>(<span class="pl-c1">1000</span>);
 
-         LED_YELLOW;
-         HAL_Delay(1000);
+         <span class="pl-c1">LED_YELLOW</span>;
+         <span class="pl-en">HAL_Delay</span>(<span class="pl-c1">1000</span>);
 
-         LED_PURPLE;
-         HAL_Delay(1000);
+         <span class="pl-c1">LED_PURPLE</span>;
+         <span class="pl-en">HAL_Delay</span>(<span class="pl-c1">1000</span>);
 
-         LED_CYAN;
-         HAL_Delay(1000);
+         <span class="pl-c1">LED_CYAN</span>;
+         <span class="pl-en">HAL_Delay</span>(<span class="pl-c1">1000</span>);
 
-         LED_WHITE;
-         HAL_Delay(1000);
+         <span class="pl-c1">LED_WHITE</span>;
+         <span class="pl-en">HAL_Delay</span>(<span class="pl-c1">1000</span>);
 
-         LED_RGBOFF;
-         HAL_Delay(1000);
+         <span class="pl-c1">LED_RGBOFF</span>;
+         <span class="pl-en">HAL_Delay</span>(<span class="pl-c1">1000</span>);
      }
- }
-</code></pre>
+ }</pre></div>
 <blockquote>
 <p>代码清单8：F103-MINI开发板控制LED灯 ，main文件</p>
 </blockquote>
-<pre class="notranslate"><code class="notranslate">int main(void)
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-smi">int</span> <span class="pl-en">main</span>(<span class="pl-smi">void</span>)
 {
-    /* 系统时钟初始化成72 MHz */
-    SystemClock_Config();
+    <span class="pl-c">/* 系统时钟初始化成72 MHz */</span>
+    <span class="pl-en">SystemClock_Config</span>();
 
-    /* LED 端口初始化 */
-    LED_GPIO_Config();
+    <span class="pl-c">/* LED 端口初始化 */</span>
+    <span class="pl-en">LED_GPIO_Config</span>();
 
-    /* 控制LED灯 */
-    while (1) {
-        LED1( ON );      // 亮
-        HAL_Delay(1000);
-        LED1( OFF );      // 灭
-        HAL_Delay(1000);
+    <span class="pl-c">/* 控制LED灯 */</span>
+    <span class="pl-k">while</span> (<span class="pl-c1">1</span>) {
+        <span class="pl-en">LED1</span>( <span class="pl-c1">ON</span> );      <span class="pl-c">// 亮</span>
+        <span class="pl-en">HAL_Delay</span>(<span class="pl-c1">1000</span>);
+        <span class="pl-en">LED1</span>( <span class="pl-c1">OFF</span> );      <span class="pl-c">// 灭</span>
+        <span class="pl-en">HAL_Delay</span>(<span class="pl-c1">1000</span>);
 
-        LED2( ON );     // 亮
-        HAL_Delay(1000);
-        LED2( OFF );      // 灭
+        <span class="pl-en">LED2</span>( <span class="pl-c1">ON</span> );     <span class="pl-c">// 亮</span>
+        <span class="pl-en">HAL_Delay</span>(<span class="pl-c1">1000</span>);
+        <span class="pl-en">LED2</span>( <span class="pl-c1">OFF</span> );      <span class="pl-c">// 灭</span>
     }
-}
-</code></pre>
+}</pre></div>
 <p>在main函数中，调用SystemClock_Config函数初始化系统的时钟为72MHz，所有程序都必须设置好系统的时钟再进行其他操作，具体设置将在RCC时钟章节详细讲解， 接着调用我们前面定义的LED_GPIO_Config初始化好LED的控制引脚， 然后直接调用各种控制LED灯亮灭的宏来实现LED灯的控制，延时采用库自带基于滴答时钟延时HAL_Delay单位为ms，直接调用即可，HAL_Delay(1000)表示延时1s。</p>
 <p>以上，就是一个使用STM32 HAL软件库开发应用的流程。<br>
 <a href="https://doc.embedfire.com/mcu/stm32/f103/hal_generalzh/latest/doc/chapter12/chapter12.html" rel="nofollow">GPIO输出—使用固件库点亮LED</a></p></div>

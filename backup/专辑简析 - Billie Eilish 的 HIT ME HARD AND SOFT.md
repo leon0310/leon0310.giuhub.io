@@ -14,17 +14,22 @@ Gmeek-html<iframe style='border-radius:12px' src='https://open.spotify.com/embed
 ```
 Gmeek-html<iframe style='border-radius:12px' src='https://open.spotify.com/embed/track/629DixmZGHc7ILtEntuiWE?utm_source=generator' width='100%' height='152' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'></iframe>
 ```
-虽说‘skinny’与‘lunch’之间碧梨选择了一个相对平滑的过渡，但这两首歌没有任何的联系。碧梨一转skinny中传达的忧郁情绪，表达直白，她只是用自己的方式透露了自己的双性恋取向，然而在大多数人看来是一种麻木不仁的”酷儿诱饵“。用简单平快的音乐谈论直白的”性明示“，在流媒体时代中算的上为一种”时尚单品“。
+虽说‘skinny’与‘lunch’之间碧梨选择了一个相对平滑的过渡，但这两首歌没有任何的联系。碧梨一转skinny中传达的忧郁情绪，表达直白，她只是用自己的方式透露了自己的双性恋取向，然而在大多数人看来是一种麻木不仁的”酷儿诱饵“。用简单平快的音乐谈论直白的”性明示“，加上y2k风格的 songwriting 和 MV，让这首歌在流媒体时代中算的上是一种”酷儿时尚单品“。
+> lunch MV 片段
+<img src="https://github.com/user-attachments/assets/431d8f1c-a508-479a-b69c-e0d131e13774" width="50%" />
 
 ### 2.3 chihiro  9.0 ⭐
 ```
 Gmeek-html<iframe style='border-radius:12px' src='https://open.spotify.com/embed/track/7BRD7x5pt8Lqa1eGYC4dzj?utm_source=generator' width='100%' height='152' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'></iframe>
 ```
 受千与千寻主角”千寻“启发的’chihiro’，碧梨在这首歌中讲述女孩如何深入理解生活，勇敢面对内心恐惧的旅程，house电子舞曲节拍搭建出犹如电影中通往异世界的隧道，如梦似幻，像是漂浮著又像是不断下沉，既混乱又享受，碧梨精准传递她所谓的双向矛盾概念”HARD AND SOFT“；虚无缥缈的人声无疑为这首歌的氛围增色，beatswitch虽在以往的专辑中被多次使用，但却屡试不爽，在这首歌中得到了很好的体现。
+> chihiro MV 片段
+<img src="https://github.com/user-attachments/assets/7e7dc970-d165-4698-a713-fdeffdd40f1b" width="50%" />
+
 
 ### 2.4 birds of the feather 9.6 ⭐
 
 ```
 Gmeek-html<iframe style='border-radius:12px' src='https://open.spotify.com/embed/track/6dOtVTDdiauQNBQEDOtlAB?utm_source=generator' width='100%' height='152' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'></iframe>
 ```
- birds of the feather，意为物以类聚，趣味相投。这首歌是HMHDS中唯一较为轻快的歌曲，让这首专辑不会完全被忧郁浸润。碧梨在 birds of the feather 中将恋人情愫的甜蜜感体现的淋漓尽致，这导致它成为了这张专辑中最受短视频软件欢迎的歌曲之一，但这首歌的优秀不会被流量所埋没。碧梨用简单的鼓敲出了阳光与夏天的味道，”till the day I die“处的高音与后面跟随的特门雷琴模拟出来的鸟叫声宛如一对比翼双飞的鸟儿，足以称得上这首歌的高光之处。
+ birds of the feather，意为物以类聚，趣味相投。这首歌是HMHAS中唯一较为轻快的歌曲，让这首专辑不会完全被忧郁浸润。碧梨在 birds of the feather 中将恋人情愫的甜蜜感体现的淋漓尽致，这导致它成为了这张专辑中最受短视频软件欢迎的歌曲之一，但这首歌的优秀不会被流量所埋没。碧梨用简单的鼓敲出了阳光与夏天的味道，”till the day I die“处的高音与后面跟随的特门雷琴模拟出来的鸟叫声宛如一对比翼双飞的鸟儿，足以称得上这首歌的高光之处。

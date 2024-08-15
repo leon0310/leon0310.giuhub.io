@@ -35,3 +35,14 @@ Gmeek-html<iframe style='border-radius:12px' src='https://open.spotify.com/embed
 Gmeek-html<iframe style='border-radius:12px' src='https://open.spotify.com/embed/track/6dOtVTDdiauQNBQEDOtlAB?utm_source=generator' width='100%' height='152' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'></iframe>
 ```
  birds of the feather，意为物以类聚，趣味相投。这首歌是HMHAS中唯一较为轻快的歌曲，让这首专辑不会完全被忧郁浸润。碧梨在 birds of the feather 中将恋人情愫的甜蜜感体现的淋漓尽致，这导致它成为了这张专辑中最受短视频软件欢迎的歌曲之一，但这首歌的优秀不会被流量所埋没。碧梨用简单的鼓敲出了阳光与夏天的味道，”till the day I die“处的高音与后面跟随的特门雷琴模拟出来的鸟叫声宛如一对比翼双飞的鸟儿，足以称得上这首歌的高光之处。
+
+### 2.5 wild flower 9.3 ⭐
+```
+Gmeek-html<iframe style='border-radius:12px' src='https://open.spotify.com/embed/track/3QaPy1KgI7nu9FJEQUgn6h?utm_source=generator' width='100%' height='152' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'></iframe>
+```
+简单的民谣吉他和弦，由浅入深的鼓点，构成了这首歌，”wild flower“。碧梨在歌曲中诉说着在聚灯光以外的，极具私人情绪的故事。”did I cross the line？“”I know you didn't mean to hurt me ,so I kept it to myself“，明明如此了解的两人，却因复杂的恋人关系，只能被定义为一种模糊的同性情愫，换来的便是卑微与内耗。后半段的爆发，又转为低声细语，足以窥探女主人公复杂矛盾的情绪。
+
+### 2.6 the greatest 9.4 ⭐
+```
+
+```

@@ -44,5 +44,19 @@ Gmeek-html<iframe style='border-radius:12px' src='https://open.spotify.com/embed
 
 ### 2.6 the greatest 9.4 ⭐
 ```
-
+Gmeek-html<iframe style='border-radius:12px' src='https://open.spotify.com/embed/track/6TGd66r0nlPaYm3KIoI7ET?utm_source=generator' width='100%' height='152' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'></iframe>
 ```
+如果你是按照专辑顺序聆听的话，你会发现这三首歌的出现与过度是那么的自然，以至于你会认为这三首歌是一同制作的。事实上，这三首歌的编写的时间跨度大概是1-2年，自此你可以看出这个专辑的编排的精心之处。让我们回到这首歌本身。同为 ’The Greatest‘，Lana Del Ray 在’Norman Fuxxing Rockwell‘里面表现的有多含蓄，在Billie Eilish 的演绎下便有多张狂。同样是简单的吉他和弦起手，这首歌由浅入深，加上逐渐密集的鼓点，让这首歌逐渐推向高潮。高潮过后又重返寂静，当人们以为这首歌以寂静结束时，人声又逐渐响起，变得悠长婉转。
+
+### 2.7 L&#39;AMOUR DE MA VIE 9.0 ⭐
+```
+Gmeek-html<iframe style='border-radius:12px' src='https://open.spotify.com/embed/track/6fPan2saHdFaIHuTSatORv?utm_source=generator' width='100%' height='152' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'></iframe>
+```
+’L&#39;AMOUR DE MA VIE’在法语中是”一生挚爱“的意思，是一首坦承虽然对前任撒了谎，但对关系的结束感到解脱与自由，前半段以爵士、Lounge风慵懒的哼唱，后段在人声变音效果下瞬间掉入80年代电子合成舞曲。虽然说这样的编排符合专辑的概念，但前后的曲风转折过于割裂，使得大多数人会觉得这是两首独立的单曲。如果参考歌词来看，你就能知道为何Billie会这么做了。前半段更多是关于与前任分手的对话，曲风也随着对话内容而压抑；后半段更多是一种发现真相之后的愤怒，想要通过发泄来让自我释然的内心对话。
+
+### 2.8 The Diner 8.8 ⭐
+```
+Gmeek-html<iframe style='border-radius:12px' src='https://open.spotify.com/embed/track/1LLUoftvmTjVNBHZoQyveF?utm_source=generator' width='100%' height='152' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'></iframe>
+```
+相较于前三首，这首歌的进入显得格外割裂。这个时候，Billie 又重返古怪的属于她的低音进行演绎。这首歌的风格如同HTE的’NDA‘，但故事的视角却是迥然不同。她以跟踪者的角度描写，并以自己的真实经验，生动描绘受到跟踪者纠缠的恐惧，甚至在歌曲结尾轻声念出一组实际能接通的电话号码，拨打就能听见留言。
+

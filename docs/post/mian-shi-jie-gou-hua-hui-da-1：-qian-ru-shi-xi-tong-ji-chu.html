@@ -10,13 +10,17 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="Though we are absolutely against the violence online,the trend of violence being popular and even fashion,is what we had to think about.">
-<meta property="og:title" content="Violence on the Internet is killing our brain">
-<meta property="og:description" content="Though we are absolutely against the violence online,the trend of violence being popular and even fashion,is what we had to think about.">
+<meta name="description" content="### - **问题：**
+
+1.">
+<meta property="og:title" content="面试结构化回答1：嵌入式系统基础">
+<meta property="og:description" content="### - **问题：**
+
+1.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://leon0310.github.io/leon0310.giuhub.io//post/Violence%20on%20the%20Internet%20is%20killing%20our%20brain.html">
+<meta property="og:url" content="https://leon0310.github.io/leon0310.giuhub.io//post/mian-shi-jie-gou-hua-hui-da-1%EF%BC%9A-qian-ru-shi-xi-tong-ji-chu.html">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/Meekdai/meekdai.github.io/logo64.jpg">
-<title>Violence on the Internet is killing our brain</title>
+<title>面试结构化回答1：嵌入式系统基础</title>
 
 
 
@@ -49,7 +53,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 <body>
     <div id="header">
-<h1 class="postTitle">Violence on the Internet is killing our brain</h1>
+<h1 class="postTitle">面试结构化回答1：嵌入式系统基础</h1>
 <div class="title-right">
     <a href="https://leon0310.github.io/leon0310.giuhub.io/" id="buttonHome" class="btn btn-invisible circle" title="home">
         <svg class="octicon" width="16" height="16">
@@ -57,7 +61,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
         </svg>
     </a>
     
-    <a href="https://github.com/leon0310/leon0310.giuhub.io/issues/9" target="_blank" class="btn btn-invisible circle" title="Issue">
+    <a href="https://github.com/leon0310/leon0310.giuhub.io/issues/11" target="_blank" class="btn btn-invisible circle" title="Issue">
         <svg class="octicon" width="16" height="16">
             <path id="pathIssue" fill-rule="evenodd"></path>
         </svg>
@@ -73,7 +77,60 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><p>Though we are absolutely against the violence online,the trend of violence being popular and even fashion,is what we had to think about.In the next few passages will talk about a list of sample of current situation of the Internet environment.</p></div>
+<div class="markdown-body" id="postBody"><h3>- <strong>问题：</strong></h3>
+<ol>
+<li>嵌入式系统与通用计算机的主要区别是什么？</li>
+<li>解释MCU的基本架构组成部分</li>
+<li>什么是中断？中断服务程序（ISR）的设计注意事项？</li>
+<li>轮询与中断驱动的优缺点对比</li>
+<li>GPIO的输入/输出模式有哪些？</li>
+<li>如何配置时钟树以满足低功耗需求？</li>
+<li>解释看门狗定时器（WDT）的作用</li>
+<li>嵌入式系统中常见的存储器类型及区别（ROM/RAM/Flash）</li>
+<li>什么是DMA？典型应用场景？</li>
+<li>如何实现嵌入式系统的启动引导（Bootloader）？</li>
+<li>解释内存对齐（Memory Alignment）的概念</li>
+<li>什么是位带（Bit-Banding）操作？</li>
+<li>如何防止嵌入式系统中的堆栈溢出？</li>
+<li>解释哈佛架构与冯·诺依曼架构的区别</li>
+<li>嵌入式系统中如何实现代码保护？</li>
+</ol>
+<p><strong>回答技巧：</strong></p>
+<ul>
+<li>
+<p>结构化表达：分点回答（如“第一…第二…”）。</p>
+</li>
+<li>
+<p>举例说明：结合常见芯片（如STM32）或场景（如智能家居）。</p>
+</li>
+<li>
+<p>承认不足：若完全不懂，可回答：“这部分我还在学习中，我的初步理解是…”。</p>
+</li>
+<li>
+<p>关联基础：用已掌握的知识推导答案（如通过C语言理解内存对齐）。</p>
+</li>
+</ul>
+<p>example：</p>
+<p><strong><em>- 1. 嵌入式系统与通用计算机的主要区别？</em></strong><br>
+回答：<br>
+嵌入式系统与通用计算机的核心区别体现在这几个方面：<br>
+第一是<strong>专用性</strong>：嵌入式系统为特定任务设计（如空调温控模块），而通用计算机（如笔记本电脑）支持多种应用。<br>
+第二是<strong>实时性</strong>：许多嵌入式系统需实时响应事件（如汽车安全气囊触发），通用计算机对实时性要求较低。<br>
+第三<strong>功耗成本</strong>方面：嵌入式系统常追求低功耗和小体积（如智能手表），而通用计算机更注重性能扩展。<br>
+比如：智能手机的摄像头模块是嵌入式系统，而手机整体可视为通用计算机。</p>
+<p>** <em>2. MCU的基本架构组成部分？</em>**<br>
+回答：<br>
+MCU（微控制器）的核心架构包括：<br>
+（1）<strong>CPU</strong>：执行指令的核心，如ARM Cortex-M系列。<br>
+（2）<strong>存储器</strong>：<br>
+Flash：存储固件代码（非易失性）。<br>
+RAM：存储临时数据（掉电丢失）。<br>
+（3）<strong>外设模块</strong>：<br>
+GPIO：控制输入/输出引脚。<br>
+定时器/PWM：用于时间管理和信号生成。<br>
+ADC/DAC：模数/数模转换。<br>
+通信接口：UART、SPI、I2C等。<br>
+（4）<strong>总线系统</strong>：连接CPU、存储器和外设的数据/地址/控制总线。</p></div>
 <div style="font-size:small;margin-top:8px;float:right;">转载请注明出处</div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">comments</button>

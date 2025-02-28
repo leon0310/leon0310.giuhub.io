@@ -118,7 +118,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 第二是<strong>实时性</strong>：许多嵌入式系统需实时响应事件（如汽车安全气囊触发），通用计算机对实时性要求较低。<br>
 第三<strong>功耗成本</strong>方面：嵌入式系统常追求低功耗和小体积（如智能手表），而通用计算机更注重性能扩展。<br>
 比如：智能手机的摄像头模块是嵌入式系统，而手机整体可视为通用计算机。</p>
-<p>** <em>2. MCU的基本架构组成部分？</em>**<br>
+<p><strong><em>2. MCU的基本架构组成部分？</em></strong><br>
 回答：<br>
 MCU（微控制器）的核心架构包括：<br>
 （1）<strong>CPU</strong>：执行指令的核心，如ARM Cortex-M系列。<br>
@@ -130,7 +130,25 @@ GPIO：控制输入/输出引脚。<br>
 定时器/PWM：用于时间管理和信号生成。<br>
 ADC/DAC：模数/数模转换。<br>
 通信接口：UART、SPI、I2C等。<br>
-（4）<strong>总线系统</strong>：连接CPU、存储器和外设的数据/地址/控制总线。</p></div>
+（4）<strong>总线系统</strong>：连接CPU、存储器和外设的数据/地址/控制总线。</p>
+<p><strong><em>3.什么是中断？中断服务程序（ISR）的设计注意事项？</em></strong></p>
+<p>回答：<br>
+中断：硬件或软件触发的异步事件，暂停当前程序以优先处理紧急任务。</p>
+<p>ISR设计注意事项：</p>
+<p><strong>短小高效</strong>：仅执行关键操作（如置标志位），复杂逻辑移至主循环。<br>
+<strong>避免阻塞</strong>：禁止使用延时函数或等待外部事件。<br>
+<strong>数据保护</strong>：共享变量需用volatile修饰或原子操作保护。<br>
+<strong>优先级管理</strong>：合理配置中断嵌套，防止优先级反转。<br>
+示例：串口接收中断ISR仅将数据存入缓冲区，主程序解析协议。</p>
+<p><strong><em>4. 轮询与中断驱动的优缺点对比</em></strong><br>
+回答：<br>
+<strong>轮询：</strong><br>
+<strong>优点</strong>：实现简单（如循环读取传感器状态），适合低实时性场景。<br>
+<strong>缺点</strong>：CPU占用率高，响应延迟不可控（如频繁空转浪费资源）。<br>
+<strong><em>中断驱动：</em></strong><br>
+**优点：**实时性强（事件触发立即响应），CPU利用率高（可休眠）。<br>
+**缺点：**编程复杂（需处理竞态条件），中断过多可能导致堆栈溢出。<br>
+场景对比：<strong>温湿度传感器定期采样可用轮询，火灾报警必须用中断。</strong></p></div>
 <div style="font-size:small;margin-top:8px;float:right;">转载请注明出处</div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">comments</button>
